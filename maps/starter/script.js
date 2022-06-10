@@ -9,6 +9,18 @@ WA.room.onEnterZone('clock', () => {
 })
 
 WA.room.onLeaveZone('clock', closePopUp)
+
+WA.room.onEnterLayer('vscodeZone').subscribe(() => {
+    WA.ui.displayActionMessage({
+        message: "Ouais ouais ouais ouais ouais ouais ouais ouais le monde ou rien",
+        callback: () => {
+            WA.chat.sendChatMessage("confirmed", "trigger message logic");
+        }
+    })
+});
+
+const coWebsiteWorkAdventure = await WA.nav.openCoWebSite('http://vscode.dev/liveshare/4C044654ABA96A48B68689E3796F369942DD', true, "", 70, 1, true, true);
+
 /*
 const vsCode = await WA.ui.website.open({
     url: "https://vscode.dev",
